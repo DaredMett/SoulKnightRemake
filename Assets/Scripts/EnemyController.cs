@@ -7,7 +7,6 @@ using UnityEngine;
 public class EnemyController : Controller
 {
     private Vector3 TargetPos;
-    private int DamageAmount = 10;
     private void Start()
     {
         TargetPos = transform.position;

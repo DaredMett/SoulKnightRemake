@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    public Model MineModel;
-    public View MineView;
-    public Rigidbody2D rb;
-    public Vector2 NewDirection;
+    private Model MineModel;
+    private View MineView;
+    private Rigidbody2D rb;
+    [HideInInspector]public Vector2 NewDirection;
+    public float Speed = 3.0f;
     private void Awake()
     {
         MineModel = GetComponent<Model>();
@@ -31,6 +32,6 @@ public class Controller : MonoBehaviour
 
     public void Move()
     {
-        rb.velocity = NewDirection;
+        rb.velocity = NewDirection.normalized * Speed;
     }
 }

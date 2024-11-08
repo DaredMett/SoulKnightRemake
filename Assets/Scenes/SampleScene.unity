@@ -136,8 +136,8 @@ GameObject:
   - component: {fileID: 198610714}
   - component: {fileID: 198610718}
   - component: {fileID: 198610717}
-  - component: {fileID: 198610720}
   - component: {fileID: 198610721}
+  - component: {fileID: 198610720}
   m_Layer: 0
   m_Name: Main Player
   m_TagString: Player
@@ -277,6 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NewDirection: {x: 0, y: 0}
+  Speed: 6
 --- !u!95 &198610720
 Animator:
   serializedVersion: 5
@@ -2924,6 +2925,7 @@ GameObject:
   - component: {fileID: 1070555312}
   - component: {fileID: 1070555314}
   - component: {fileID: 1070555311}
+  - component: {fileID: 1070555315}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -3046,6 +3048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NewDirection: {x: 0, y: 0}
+  Speed: 3
 --- !u!50 &1070555310
 Rigidbody2D:
   serializedVersion: 4
@@ -3059,7 +3062,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -3106,7 +3109,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.94, y: 1.04}
+  m_Size: {x: 1.51, y: 1.04}
   m_Direction: 0
 --- !u!114 &1070555312
 MonoBehaviour:
@@ -3133,6 +3136,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6954abb59e7920d45a239ade899a2776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1070555315
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070555301}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: da8150333375cb04a9436b3fd103646b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1309632520
 GameObject:
   m_ObjectHideFlags: 0
