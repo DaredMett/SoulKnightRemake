@@ -5,11 +5,12 @@ using System;
 
 public class Model : MonoBehaviour
 {
+    public float Speed = 3.0f;
     private int HPMax = 100;
     private int HPCurrent;
     private int HPMin = 0;
     public event Action OnDeath;
-    public void Damage(int DamageAmount)
+    public virtual void Damage(int DamageAmount)
     {
         HPCurrent = HPCurrent - DamageAmount;
     }

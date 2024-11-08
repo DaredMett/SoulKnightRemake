@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerController : Controller
 {
-    public override void CalculateMove()
+    public override void CalculateDirection()
     {
-        NewVelocity.y = Input.GetAxis("Vertical");
-        NewVelocity.x = Input.GetAxis("Horizontal");
+        NewDirection.y = Input.GetAxis("Vertical");
+        NewDirection.x = Input.GetAxis("Horizontal");
     }
 }
