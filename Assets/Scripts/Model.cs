@@ -7,7 +7,8 @@ public class Model : MonoBehaviour
 {
     public float Speed = 3.0f;
     private int HPMax = 100;
-    public int HPCurrent { get; private set; }
+    public string MineTag;
+    public int HPCurrent;
     private int HPMin = 0;
     public event Action OnDeath;
     private void Awake()

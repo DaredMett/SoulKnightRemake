@@ -9,6 +9,10 @@ public class DamageOnTouch : MonoBehaviour
     public float TimeSinceLastDamage;
     public void OnCollisionStay2D(Collision2D collision)
     {
+        if (collision.gameObject.tag == tag)
+        {
+            return;
+        }
         if(TimeSinceLastDamage >= CoolDown)
         {
             Model EnemyModel;
