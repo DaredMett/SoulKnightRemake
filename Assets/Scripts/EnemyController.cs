@@ -7,6 +7,7 @@ using UnityEngine;
 public class EnemyController : Controller
 {
     private Vector3 TargetPos;
+    private Vector3 DirectionToPlayer;
     private void Start()
     {
         TargetPos = transform.position;
@@ -20,6 +21,14 @@ public class EnemyController : Controller
     }
     public override void CalculateDirection()
     {
-        NewDirection = TargetPos - transform.position;
+        DirectionToPlayer = TargetPos - transform.position;
+        if (DirectionToPlayer.magnitude < 1f)
+        {
+            NewDirection = DirectionToPlayer;
+        }
+        else
+        {
+            NewDirection = Vector3.zero;
+        }
     }
 }

@@ -5,25 +5,18 @@ using UnityEngine;
 public class DamageOnTouch : MonoBehaviour
 {
     public int DamageAmount = 10;
-    public float CoolDown = 1;
-    public float TimeSinceLastDamage;
-    public void OnCollisionStay2D(Collision2D collision)
+    public void OnTriggerStay2D(Collider2D collision)
     {
+        if (collision.isTrigger)
+        {
+            return;
+        }
         if (collision.gameObject.tag == tag)
         {
             return;
         }
-        if(TimeSinceLastDamage >= CoolDown)
-        {
-            Model EnemyModel;
-            EnemyModel = collision.gameObject.GetComponent<Model>();
-            EnemyModel.Damage(DamageAmount);
-            print(EnemyModel.HPCurrent);
-            TimeSinceLastDamage = 0;
-        }
-    }
-    public void Update()
-    {
-        TimeSinceLastDamage += Time.deltaTime;
+        Model EnemyModel;
+        EnemyModel = collision.gameObject.GetComponent<Model>();
+        EnemyModel.Damage(DamageAmount);
     }
 }
