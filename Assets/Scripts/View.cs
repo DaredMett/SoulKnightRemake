@@ -13,6 +13,7 @@ public class View : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         MineAnimator = GetComponent<Animator>();
         spRender = GetComponent<SpriteRenderer>();
+        UIManager.Instance.AskForSlider(this.gameObject);
     }
     public void WalkAnimatorOn()
     {
@@ -40,5 +41,9 @@ public class View : MonoBehaviour
         {
             spRender.flipX= false;
         }
+    }
+    public virtual void UpdateHealth(int health)
+    {
+        
     }
 }

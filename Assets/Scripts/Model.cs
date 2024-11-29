@@ -11,6 +11,7 @@ public class Model : MonoBehaviour
     public int HPCurrent;
     private int HPMin = 0;
     public event Action OnDeath;
+    public event Action<int> OnHealthChange;
     public float InvisibilityCoolDown = 1;
     public float TimeSinceLastDamage = 5;
     private void Awake()
@@ -24,8 +25,8 @@ public class Model : MonoBehaviour
             HPCurrent = HPCurrent - DamageAmount;
             CheckHealth();
             TimeSinceLastDamage = 0;
-            print(HPCurrent  + name);
         }
+        OnHealthChange.Invoke(HPCurrent);
     }
     public void CheckHealth()
     {

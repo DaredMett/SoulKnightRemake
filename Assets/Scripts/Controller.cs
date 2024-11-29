@@ -14,6 +14,7 @@ public class Controller : MonoBehaviour
         MineView = GetComponent<View>();
         rb = GetComponent<Rigidbody2D>();
         MineModel.OnDeath += Death;
+        MineModel.OnHealthChange += MineView.UpdateHealth;
     }
     public void Death()
     {
